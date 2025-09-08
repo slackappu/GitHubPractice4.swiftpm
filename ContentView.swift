@@ -1,12 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tasks: [String] = ["Mow the lawn", "Buy Groceries", "Walk the Dog"]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+       List(tasks, id: \.self) { task in
+            Text(task)
         }
     }
 }
