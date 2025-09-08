@@ -9,3 +9,4 @@ struct Task: Hashable {
     var nameOfTask: String = ""
         
 }
+
