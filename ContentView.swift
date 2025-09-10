@@ -2,12 +2,22 @@ import SwiftUI
 
     
 struct ContentView: View {
-    @State var tasks: [String] = ["Mow the lawn", "Buy Groceries", "Walk the Dog"]
-    @State var nameOftask: [Task] = []
+    //    @State var tasks: [Task] = [
+    //        Task(nameOfTask: "Mow the lawn"),
+    //        Task(nameOfTask: "Buy Groceries"),
+    //        Task(nameOfTask: "Walk the Dog")
+//]
+    @State var tasks: [Task] = []
     var body: some View {
-       List(tasks, id: \.self) { task in
-            Text(task)
+        VStack{
+            HeaderView(tasks: $tasks)
+            List(tasks, id: \.self) { currentTask in
+                Text(currentTask.nameOfTask)
+            }
         }
     }
 }
 
+#Preview {
+    ContentView()
+}
