@@ -8,6 +8,7 @@ struct ContentView: View {
        List(tasks, id: \.self) { task in
             Text(task)
         }
+       .listStyle(.grouped)
     }
 }
 
